@@ -13,4 +13,7 @@ window.RequestAnimationFrame = (function()
 }
 	)();
 
+	Scene["Loader"] = new Loader();
+	Application.LoadedScene = Scenes ["Loader"];
+	
 	Run();

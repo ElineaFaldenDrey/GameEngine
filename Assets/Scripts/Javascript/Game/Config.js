@@ -8,4 +8,4 @@ var Application =
 	LoadedScene: null
 }
 
-Application.LoadedScene = Scene();
+var Scenes;
