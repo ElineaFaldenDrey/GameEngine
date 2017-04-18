@@ -2,7 +2,7 @@ function Scene()
 {
 	this.name = "Model";
 	this.started = false;
-	
+	var color;
 
 	// appele à la cration d'objet
 	this.Awake  = function()
@@ -25,7 +25,21 @@ function Scene()
 
 	this.Update = function()
 	{
-
+		Fill = function(color)
+		{
+			if(color == "blue")
+			{
+				ctx.fillRect(0,0,100,100);
+			}
+			else if(color == "green")
+			{
+				ctx.fillRect(0,0,100,100);
+			}
+			else if(color == "yellow")
+			{
+				ctx.fillRect(0,0,100,100);
+			}
+		}
 
 		
 	}
