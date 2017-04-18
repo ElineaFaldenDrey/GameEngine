@@ -2,25 +2,27 @@ function Scene()
 {
 	this.name = "Model";
 	this.started = false;
+	this.GameObjects = [];
 	
 
 	// appele à la cration d'objet
 	this.Awake  = function()
 	{
 		console.clear();
-		console.log('System: Scene ' + this.name + " Created");
+		Print('System: Scene ' + this.name + " Created");
 	}
 
 	this.Start  = function()
 	{
-		if(!this.Started)
+		
+
+		if(!this.started)
 		{
-			this.Started = true;
+			this.started = true;
 			// c'est ici qu'on mettra les animations
-			console.log('System: Scene ' + this.name + " Started");
+			Print('System: Scene ' + this.name + " Started");
+
 			
-			Scene["toto"] = new Scene();
-			Application.LoadedLevel = Scene["toto"];
 		}
 
 		this.Update();
@@ -28,6 +30,13 @@ function Scene()
 
 	this.Update = function()
 	{
+		if(!Application.GamePaused)
+		{
+			for (var i = 0; i < this.GameObjects.length; i++) {
+				
+				this.GameObjects[i].Start();
+			}
+		}
 
 
 		

@@ -8,7 +8,7 @@ function Loader()
 	this.Awake  = function()
 	{
 		console.clear();
-		console.log('System: Scene ' + this.name + " Created");
+		Print('System: Scene ' + this.name + " Created");
 	}
 
 	this.Start  = function()
@@ -17,7 +17,7 @@ function Loader()
 		{
 			this.Started = true;
 			// c'est ici qu'on mettra les animations
-			console.log('System: Scene ' + this.name + " Started");
+			Print('System: Scene ' + this.name + " Started");
 		}
 
 		this.Update();

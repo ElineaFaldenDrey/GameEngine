@@ -7,11 +7,19 @@ function GameObject()
 
 	this.Awake = function()
 	{
+		Print("System : GameObject "+ this.name + " Created");
 
 	};
 
 	this.Start = function()
 	{
+		if(!this.started)
+		{
+			this.started = true;
+			Print("System : GameObject "+ this.name + " Started");
+		}
+
+		this.Update();
 
 	};
 
