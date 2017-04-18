@@ -8,7 +8,7 @@ function Scene()
 	// appele à la cration d'objet
 	this.Awake  = function()
 	{
-		console.clear();
+		if(!Debug.enabled) console.clear();
 		Print('System: Scene ' + this.name + " Created");
 	}
 
@@ -32,18 +32,24 @@ function Scene()
 	{
 		if(!Application.GamePaused)
 		{
-			for (var i = 0; i < this.GameObjects.length; i++) {
+			for (var i = 0; i < this.GameObjects.length; i++) 
+			{
 				
 				this.GameObjects[i].Start();
 			}
 		}
-
+		
+		this.GUI();
 
 		
 	}
 	// chaque fois qu'on apsse dans un menu defini
 	this.GUI 	= function()
 	{
+		if(Application.DebugMode)
+		{
+			Debug.DebugScene();
+		}
 
 	}
 

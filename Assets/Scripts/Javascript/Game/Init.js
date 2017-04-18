@@ -9,11 +9,17 @@ window.RequestAnimationFrame = (function()
 			window.setTimeOut(_callback, 1000/60);
 		};
 
-	// permet de recupérer un event qui est le rafraississement de zl'écran
+	// permet de recupérer un event qui est le rafraississement de l'écran
 }
 	)();
 
 	Scenes["Loader"] = new Loader();
 	Application.LoadedScene = Scenes ["Loader"];
+
+	window.addEventListener("keydown", Input.Keydown);
+	window.addEventListener("keyup", Input.KeyUp);
+	window.addEventListener("mouseUp", Input.MouseUp);
+	window.addEventListener("mousedown", Input.MouseDown);
+	window.addEventListener("mousemove", Input.MouseMove);
 
 	Run();

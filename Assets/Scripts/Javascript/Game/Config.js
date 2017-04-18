@@ -6,7 +6,9 @@ var ctx = canvas.getContext("2d");
 var Application =
 {
 	LoadedScene: null,
-	GamePaused : false
+	GamePaused : false,
+	DebugMode: true
 }
 
 var Scenes = {};
+

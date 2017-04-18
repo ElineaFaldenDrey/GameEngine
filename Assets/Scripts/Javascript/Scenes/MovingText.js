@@ -1,10 +1,11 @@
-function Loader()
+function MovingText()
 {
-	this.name = "Loader";
+	this.name = "MovingText";
 	this.started = false;
+	this.GameObjects = [];
 	
 
-	// appele à la cration d'objet PHASE INITIALISATION DE TOUS LES OB JETS DU JEU
+	// appele à la cration d'objet
 	this.Awake  = function()
 	{
 		if(!Application.DebugMode) console.clear();
@@ -13,37 +14,38 @@ function Loader()
 
 	this.Start  = function()
 	{
-		if(!this.Started)
-		{
-			this.Started = true;
-			
-			// c'est ici qu'on mettra les animations
-			Print('System: Scene ' + this.name + " Started");
-			Scenes["MovingText"] = new Loader();
-			Application.LoadedScene = Scenes ["MovingText"];
-		}
-
 		
 
-	
+		if(!this.started)
+		{
+			this.started = true;
+			// c'est ici qu'on mettra les animations
+			Print('System: Scene ' + this.name + " Started");
+
+			
+		}
 
 		this.Update();
 	}
 
 	this.Update = function()
 	{
-		this.GUI();
+		if(!Application.GamePaused)
+		{
+			for (var i = 0; i < this.GameObjects.length; i++) {
+				
+				this.GameObjects[i].Start();
+			}
+		}
+		
+		ctx.fillText(mousePosition.x + " " + mousePOstition.y);
 
 
 		
 	}
 	// chaque fois qu'on apsse dans un menu defini
-	this.GUI = function()
+	this.GUI 	= function()
 	{
-		if(Application.DebugMode)
-		{
-			Debug.DebugScene();
-		}
 
 	}
 
